@@ -29,3 +29,62 @@ It enables organizations, universities, and individuals to **securely issue, ver
 
 ## 📂 Project Structure
 
+DocuChain/
+│── src/
+│ ├── main/
+│ │ ├── java/com/docuchain/
+│ │ │ ├── blockchain/ # Blockchain classes (Block, Blockchain, Hashing utils)
+│ │ │ ├── controller/ # REST Controllers
+│ │ │ ├── model/ # Entities (Document, BlockEntity)
+│ │ │ ├── repository/ # Spring Data Repositories
+│ │ │ ├── service/ # Business logic (DocumentService, BlockchainService)
+│ │ │ └── DocuChainApplication.java
+│ │ └── resources/
+│ │ ├── application.properties
+│ │ └── data.sql
+│ └── test/
+│ └── java/com/docuchain/ # Unit and Integration Tests
+│
+├── pom.xml
+└── README.md
+
+
+---
+
+## ⚡ Quickstart
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/hellest20/DocuChain.git
+cd DocuChain
+
+2. Build & Run
+mvn spring-boot:run
+
+3. Access the API
+
+Issue a new document
+POST http://localhost:8080/api/documents
+
+{
+  "title": "Bachelor of Science in Computer Science",
+  "owner": "Alice Johnson",
+  "issuer": "Tech University"
+}
+
+
+Verify a document by ID
+GET http://localhost:8080/api/documents/{id}
+
+Fetch the blockchain
+GET http://localhost:8080/api/blockchain
+
+✅ Example Use Cases
+
+🎓 Universities issuing tamper-proof diplomas.
+
+🏢 Companies verifying job applicant certificates instantly.
+
+⚖️ Legal contracts stored with integrity guarantees.
+
+📜 Government agencies issuing digital permits or licenses
