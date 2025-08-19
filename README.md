@@ -30,23 +30,33 @@ It enables organizations, universities, and individuals to **securely issue, ver
 ## 📂 Project Structure
 
 DocuChain/
-│── src/
-│ ├── main/
-│ │ ├── java/com/docuchain/
-│ │ │ ├── blockchain/ # Blockchain classes (Block, Blockchain, Hashing utils)
-│ │ │ ├── controller/ # REST Controllers
-│ │ │ ├── model/ # Entities (Document, BlockEntity)
-│ │ │ ├── repository/ # Spring Data Repositories
-│ │ │ ├── service/ # Business logic (DocumentService, BlockchainService)
-│ │ │ └── DocuChainApplication.java
-│ │ └── resources/
-│ │ ├── application.properties
-│ │ └── data.sql
-│ └── test/
-│ └── java/com/docuchain/ # Unit and Integration Tests
-│
-├── pom.xml
-└── README.md
+ ├─ pom.xml
+ ├─ README.md
+ └─ src/
+    └─ main/
+       ├─ java/com/docuchain/
+       │   ├─ controller/        # REST Controllers
+       │   │   ├─ DocumentController.java
+       │   │   └─ BlockchainController.java
+       │   ├─ model/             # Entities
+       │   │   ├─ Document.java
+       │   │   ├─ DocumentVersion.java
+       │   │   └─ Block.java
+       │   ├─ repository/        # Spring Data JPA Repos
+       │   │   ├─ DocumentRepository.java
+       │   │   ├─ DocumentVersionRepository.java
+       │   │   └─ BlockRepository.java
+       │   ├─ service/           # Business logic
+       │   │   ├─ DocumentService.java
+       │   │   └─ BlockchainService.java
+       │   ├─ util/              # Helper classes
+       │   │   └─ HashUtil.java
+       │   └─ DocuChainApplication.java
+       └─ resources/
+           ├─ application.properties
+    └─ test/java/com/docuchain/
+        └─ DocuChainApplicationTests.java
+
 
 
 ---
